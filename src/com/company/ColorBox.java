@@ -1,8 +1,10 @@
-package com.company;
+    package com.company;
 
-public class ColorBox extends Box {
+    import Enums.Colors;
+    import Enums.Materials;
 
-//    private String color;
+    public class ColorBox extends Box {
+
     private Colors color;
 
     public ColorBox() {
@@ -22,5 +24,17 @@ public class ColorBox extends Box {
         return color;
     }
 
+    @Override
+    public String toString() {
 
-}
+        return "ColorBox{" +
+                "length =" + getLength() +
+                ", high =" + getHigh() +
+                ", width =" + getWidth() +
+                ", material =" + getMaterial() +
+                ", color = " + color +
+                ", volume =" + volume() +
+                '}';
+    }
+
+    }

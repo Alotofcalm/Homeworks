@@ -1,4 +1,4 @@
-package com.company;
+package Enums;
 
 public enum Colors {
     RED,

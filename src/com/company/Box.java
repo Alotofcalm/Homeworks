@@ -1,7 +1,8 @@
 package com.company;
 
-public class Box {
+import Enums.Materials;
 
+public class Box {
 
     private double length;
     private double high;
@@ -11,18 +12,11 @@ public class Box {
     public Box() {
 
     }
-
-    public Box(double length, double high, double width) {
-        if (!validOfConstructor(length, high, width)) {
-            return;
-        }
+    public Box(double length, double high, double width, Materials material) {
+        if (validOfConstructor(length, high, width)) return;
         this.length = length;
         this.high = high;
         this.width = width;
-    }
-
-    public Box(double length, double high, double width,  Materials material) {
-        this(length, high, width);
         this.material = material;
     }
 
@@ -52,10 +46,12 @@ public class Box {
 
 
     public void setMaterial(Materials material) {
+
         this.material = material;
     }
 
     public double getLength() {
+
         return length;
     }
 
@@ -78,15 +74,22 @@ public class Box {
     private boolean validOfConstructor(double length, double high, double width) {
         if (length <= 0 | high <= 0 | width <= 0) {
             System.out.println("Вы ввели неверное значение");
-            return false;
+            return true;
         }
-        return true;
+        return false;
+    }
+
+
+    @Override
+    public String toString() {
+
+        return "Box{" +
+                "length =" + length +
+                ", high =" + high +
+                ", width =" + width +
+                ", material =" + material +
+                ", volume =" + volume() +
+                '}';
     }
 }
-// Для класса Box из предыдущих домашек добавить дочерний класс ColorBox и вынести в него свойство color,
-// а из класса Box это свойство убрать. Все методы для работы с этим свойством тоже перенести из класса Box
-// в класс ColorBox. Свойства color в классе ColorBox и material в Box переделать на Enum'ы
-// (создать перечисления для цветов и материалов и задать хотя бы по несколько возможных значений)
-
-
 
