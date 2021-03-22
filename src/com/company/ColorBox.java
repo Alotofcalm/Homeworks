@@ -7,9 +7,7 @@
 
     private Colors color;
 
-    public ColorBox() {
 
-    }
 
     public ColorBox(double length, double high, double width, Materials material, Colors color) {
         super(length, high, width, material);
